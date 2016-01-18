@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>加油哦！骚年。。。</title>
+    <body>
+        <center>{{string}}</center>
+        <center>
+        {% for i in test %}
+        {{ i }}
+        {% endfor %}
+        </center>
+        {%for item in list%}
+        {{item}}
+        {%if not forloop.last%},{%endif%}
+        {%endfor%}
+        <br \>
+        {%if request.user.is_authenticated%}
+            {{request.user.username}},您好!
+        {%else%}
+            <center>请<a href="http://www.baidu.com/">登陆!</a></center>
+        {%endif%}
+        <table border="1">
+            <tr>
+                <td>debug</td>
+                <td>{{settings.DEBUG}}</td>
+            </tr>
+            <tr>
+                <td>ip_address</td>
+                <td>{{request.path}}</td>
+            </tr>
+        </table>
+    </body>
+</html>
