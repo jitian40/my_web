@@ -1,25 +1,29 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html>
     <head>
-        <title>加油哦！骚年。。。</title>
+        <h1><p class="title_center">加油哦！骚年。。。</p></h1>
+        <link rel="stylesheet" type="text/css" href="/static/css/mytype.css">
     <body>
-        <center>{{string}}</center>
+        <center class='font'>{{string}}</center>
         <center>
         {% for i in test %}
         {{ i }}
         {% endfor %}
         </center>
+        <p class="content_center">
         {%for item in list%}
         {{item}}
         {%if not forloop.last%},{%endif%}
         {%endfor%}
+        </p>
         <br \>
         {%if request.user.is_authenticated%}
             {{request.user.username}},您好!
         {%else%}
             <center>请<a href="http://www.baidu.com/">登陆!</a></center>
         {%endif%}
-        <form method='POST'>
+        <form method='POST' class="login">
             {% csrf_token %}
             {{form}}
             <input type="submit" value="提交">

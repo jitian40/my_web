@@ -15,8 +15,10 @@ Including another URLconf
 from django.conf.urls import include, url,patterns
 from django.contrib import admin
 from myfirst import views as myfirst_views
+admin.autodiscover()
 urlpatterns = [
 	url(r'^$',myfirst_views.index,name='home'),
     url(r'^add/(\d+)/(\d+)$',myfirst_views.add,name='add'),
     url(r'^admin/', include(admin.site.urls)),
+    # url(r'^registe/', include('users.urls')),
 	]

@@ -1,0 +1,37 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	margin:0px
+	}
+ body{
+	 color:#0b5;
+	 background:#021;
+	 padding:0 0em;
+	 margin:0
+	 }
+ .font
+ {
+	 font:Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+	 color:rgba(225,231,9,1.00);
+	 padding-left:inherit;
+ }
+ .content_center{
+	 margin-left:auto;
+	 margin-right:auto;
+	 width:70%;
+	 }
+.title_center{
+	text-align:center;
+	color:rgba(219,119,197,1.00)
+}
+.login{
+	position:fixed;
+	top:25px;
+	right:25px
+	}
+ h1{
+	 margin:0px auto;
+	 width:70%;
+	 background:rgba(45,54,57,1.00);
+	 padding:25px
+	 }
