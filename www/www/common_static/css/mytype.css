@@ -24,6 +24,11 @@
 	text-align:center;
 	color:rgba(219,119,197,1.00)
 }
+.addr_right{
+ 	position:fixed;
+	top:25px;
+	left:25px;
+	}
 .login{
 	position:fixed;
 	top:25px;
