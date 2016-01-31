@@ -13,9 +13,10 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-
+import siteuser
+import djcelery
+djcelery.setup_loader()
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -34,13 +35,14 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
-    #'django.contrib.sites',
+    'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'myfirst',
     'mydb',
+    'djcelery',
 )
 
 
@@ -75,7 +77,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'www.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
@@ -91,6 +92,7 @@ DATABASES = {
 }
 
 
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
@@ -104,7 +106,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
@@ -113,5 +114,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'collected_static')
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "common_static"),)
 STATICFILES_FINDERS = (
     "django.contrib.staticfiles.finders.FileSystemFinder",
-    "django.contrib.staticfiles.finders.AppDirectoriesFinder"
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+    "django.template.loaders.filesystem.Loader",
+    "django.template.loaders.app_directories.Loader",
     )

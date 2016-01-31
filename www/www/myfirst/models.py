@@ -1,6 +1,7 @@
 #coding:utf-8
-from django.db import models
 
+import time,uuid
+from django.db import models
 # Create your models here.
 class Person(models.Model):
     first_name = models.CharField(max_length=50)
@@ -12,6 +13,7 @@ class Person(models.Model):
 
     full_name = property(my_property)
 class Article(models.Model):
+
     title = models.CharField(u'标题', max_length=256)
     content = models.TextField(u'内容')
 

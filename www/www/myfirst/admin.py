@@ -1,7 +1,6 @@
 from django.contrib import admin
 from .models import Article, Person
 
-
 class ArticleAdmin(admin.ModelAdmin):
     list_display = ('title', 'pub_date', 'update_time',)
     search_fileds=('title')
@@ -9,14 +8,5 @@ class ArticleAdmin(admin.ModelAdmin):
 class PersonAdmin(admin.ModelAdmin):
     list_display = ('full_name',)
 
-def get_search_results(self,request,queryset,search_fileds):
-    queryset, use_distinct = super(PersonAdmin, self).get_search_results(request, queryset, search_term)
-    try:
-        search_term_as_int = int(search_term)
-        queryset |= self.model.objects.filter(age=search_term_as_int)
-    except:
-        pass
-    return queryset, use_distinct
-
-
 admin.site.register(Article, ArticleAdmin)
+admin.site.register(Person,PersonAdmin)

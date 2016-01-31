@@ -20,5 +20,4 @@ urlpatterns = [
 	url(r'^$',myfirst_views.index,name='home'),
     url(r'^add/(\d+)/(\d+)$',myfirst_views.add,name='add'),
     url(r'^admin/', include(admin.site.urls)),
-    # url(r'^registe/', include('users.urls')),
 	]

@@ -1,33 +1,50 @@
 <!DOCTYPE html>
-{% load staticfiles %}
-<html>
-    <head>
-        <h1><p class="title_center">加油哦！骚年。。。</p></h1>
-        <link rel="stylesheet" type="text/css" href="/static/css/mytype.css">
-    <body>
-        <center class='font'>{{string}}</center>
-        <center>
-        {% for i in test %}
-        {{ i }}
-        {% endfor %}
-        </center>
-        <p class="content_center">
-        {%for item in list%}
-        {{item}}
-        {%if not forloop.last%},{%endif%}
-        {%endfor%}
-        </p>
-        <br \>
-        {%if request.user.is_authenticated%}
-            {{request.user.username}},您好!
-        {%else%}
-            <center>请<a href="http://www.baidu.com/">登陆!</a></center>
-        {%endif%}
-        <form method='POST' class="login">
-            {% csrf_token %}
-            {{form}}
-            <input type="submit" value="提交">
-        </form>
-        <iframe src="/static/html/login.html" class="addr_right" width="200px" height="100px"></iframe>
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />
+    <meta name="renderer" content="webkit">
+    <link rel="stylesheet" href="/static/css/mytype.css" type="text/css" />
+    <script type="text/javascript" src="/static/js/jquery.fullPage.min.js"></script>
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/play.js"></script>
+    <title>Don't give up</title>
+</head>
+<body>
+    <section class="section-wrap">
+        <div class="section section-1">
+            <div class="title active">
+                <p class="tit">CSS3 纵向滚屏翻页，支持键盘，鼠标滚轮操作</p>
+            </div>
+        </div>
+        <div class="section section-2">
+            <div class="title">
+                <p class="tit">随便写写意思下!</p>
+            </div>
+        </div>
+        <div class="section section-3">
+            <div class="title">
+                <p class="tit">随便写写意思下</p>
+            </div>
+        </div>
+        <div class="section section-4">
+            <div class="title">
+                <p class="tit">随便写写意思下</p>
+            </div>
+        </div>
+        <div class="section section-5">
+            <div class="title">
+                <p class="tit">随便写写意思下</p>
+            </div>
+        </div>
+    </section>
+    <ul class="section-btn">
+      <li class="on"></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  <!--   <div class="arrow"></div> -->
+</body>
 </html>
